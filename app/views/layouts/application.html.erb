@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taski</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <%= image_tag('logos/pic.jpg', width: '250px') %>
+  <br>
+  <%= render 'shared/nav' %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
