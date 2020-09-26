@@ -1,0 +1,21 @@
+<h3><%= @task.title %></h3>
+<p><%= @task.description %></p>
+
+<h4>Task started: <%= @task.created_at %></h4>
+
+<% if @task.updated_at != @task.created_at %>
+  <h4>Task updated: <%= @task.updated_at %></h4>
+<% else %>
+  <h4>Task updated: Not updated yet.</h4>
+<% end %>
+
+<% if @task.completed %>
+  <p><em>Task is completed.</em></p>
+<% else %>
+  <p><em>Task is pending.</em></p>
+<% end %>
+
+<p><%= link_to "Attachment", @task.task_file.to_s if @task.task_file %><p>
+
+<%= link_to 'Edit', edit_project_task_path(@task.project_id, @task.id) %>
+<%= link_to 'Back', project_path(@task.project_id) %>
